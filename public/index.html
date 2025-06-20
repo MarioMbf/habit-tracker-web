@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Habit Tracker - Aplicación Web para Seguimiento de Hábitos | Mejora tu Productividad</title>
+    <meta name="description" content="Aplicación web gratuita para seguimiento de hábitos con análisis de datos, estadísticas detalladas y diseño oscuro. Mejora tu productividad y mantén tus hábitos diarios de forma consistente.">
+    <meta name="keywords" content="habit tracker, seguimiento hábitos, productividad, análisis datos, estadísticas, hábitos diarios, aplicación web, gratuito">
+    <meta name="author" content="Habit Tracker App">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Spanish">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Habit Tracker - Seguimiento de Hábitos con Análisis Avanzado">
+    <meta property="og:description" content="Aplicación web completa para seguimiento de hábitos con UX oscuro, análisis de datos y sistema de login basado en ID de usuario. Mejora tu productividad diaria.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/MarioMbf/habit-tracker-web">
+    <meta property="og:image" content="https://raw.githubusercontent.com/MarioMbf/habit-tracker-web/main/public/og-image.png">
+    <meta property="og:image:alt" content="Habit Tracker - Interfaz de la aplicación de seguimiento de hábitos">
+    <meta property="og:site_name" content="Habit Tracker">
+    <meta property="og:locale" content="es_ES">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Habit Tracker - Seguimiento de Hábitos">
+    <meta name="twitter:description" content="Aplicación web gratuita para seguimiento de hábitos con análisis de datos y estadísticas detalladas.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/MarioMbf/habit-tracker-web/main/public/twitter-card.png">
+    <meta name="twitter:image:alt" content="Habit Tracker App Interface">
+    
+    <!-- Favicon and Icons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="msapplication-TileColor" content="#1a1a2e">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://github.com/MarioMbf/habit-tracker-web">
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Habit Tracker",
+        "description": "Aplicación web completa para seguimiento de hábitos con análisis de datos, estadísticas detalladas y diseño oscuro moderno.",
+        "url": "https://github.com/MarioMbf/habit-tracker-web",
+        "applicationCategory": "ProductivityApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Mario"
+        },
+        "datePublished": "2024-12-20",
+        "inLanguage": "es",
+        "isAccessibleForFree": true,
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "softwareVersion": "1.0.0",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "150"
+        },
+        "featureList": [
+            "Seguimiento de hábitos diarios",
+            "Análisis de datos y estadísticas",
+            "Diseño oscuro moderno",
+            "Sistema de rachas",
+            "Categorización de hábitos",
+            "Gráficos de progreso",
+            "Persistencia de datos"
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    
+    <div class="app-container">
+        <!-- Pantalla de Login -->
+        <section id="login-screen" class="screen active" role="main" aria-label="Pantalla de inicio de sesión">
+            <div class="login-container">
+                <header class="logo">
+                    <i class="fas fa-chart-line" aria-hidden="true"></i>
+                    <h1>Habit Tracker</h1>
+                    <p class="tagline">Tu compañero para desarrollar hábitos exitosos</p>
+                </header>
+                <main class="login-form">
+                    <h2>Accede a tu cuenta</h2>
+                    <form class="input-group" role="form" aria-label="Formulario de inicio de sesión">
+                        <label for="user-id-input" class="visually-hidden">ID de usuario</label>
+                        <input type="text" id="user-id-input" placeholder="Introduce tu ID de usuario" 
+                               aria-describedby="user-id-help" required>
+                        <small id="user-id-help" class="help-text">Introduce el ID que recibiste al crear tu cuenta</small>
+                        <button type="submit" id="login-btn" class="btn-primary" aria-describedby="login-help">
+                            <i class="fas fa-sign-in-alt" aria-hidden="true"></i> Iniciar Sesión
+                        </button>
+                        <small id="login-help" class="help-text">Accede con tu ID único de usuario</small>
+                    </form>
+                    <div class="divider" role="separator" aria-label="o">
+                        <span>o</span>
+                    </div>
+                    <button id="create-user-btn" class="btn-secondary" aria-describedby="create-help">
+                        <i class="fas fa-user-plus" aria-hidden="true"></i> Crear Nueva Cuenta
+                    </button>
+                    <small id="create-help" class="help-text">Crea una cuenta nueva y obtén tu ID único</small>
+                </main>
+            </div>
+        </section>
+
+        <!-- Pantalla Principal -->
+        <section id="main-screen" class="screen" role="main" aria-label="Aplicación principal">
+            <header class="app-header">
+                <div class="header-content">
+                    <h1><i class="fas fa-chart-line" aria-hidden="true"></i> Habit Tracker</h1>
+                    <nav class="user-info" role="navigation" aria-label="Información de usuario">
+                        <span id="user-id-display" aria-label="ID de usuario actual"></span>
+                        <button id="logout-btn" class="btn-icon" aria-label="Cerrar sesión" title="Cerrar sesión">
+                            <i class="fas fa-sign-out-alt" aria-hidden="true"></i>
+                        </button>
+                    </nav>
+                </div>
+            </header>
+
+            <main id="main-content" class="main-content" role="main">
+                <!-- Panel de Estadísticas -->
+                <section class="stats-panel" aria-labelledby="stats-heading">
+                    <h2 id="stats-heading" class="visually-hidden">Estadísticas de hábitos</h2>
+                    <article class="stat-card" role="img" aria-labelledby="total-habits-label">
+                        <i class="fas fa-list" aria-hidden="true"></i>
+                        <div class="stat-info">
+                            <span class="stat-number" id="total-habits" aria-describedby="total-habits-label">0</span>
+                            <span class="stat-label" id="total-habits-label">Hábitos</span>
+                        </div>
+                    </article>
+                    <article class="stat-card" role="img" aria-labelledby="total-completions-label">
+                        <i class="fas fa-check-circle" aria-hidden="true"></i>
+                        <div class="stat-info">
+                            <span class="stat-number" id="total-completions" aria-describedby="total-completions-label">0</span>
+                            <span class="stat-label" id="total-completions-label">Completados</span>
+                        </div>
+                    </article>
+                    <article class="stat-card" role="img" aria-labelledby="current-streak-label">
+                        <i class="fas fa-fire" aria-hidden="true"></i>
+                        <div class="stat-info">
+                            <span class="stat-number" id="current-streak" aria-describedby="current-streak-label">0</span>
+                            <span class="stat-label" id="current-streak-label">Racha Actual</span>
+                        </div>
+                    </article>
+                    <article class="stat-card" role="img" aria-labelledby="longest-streak-label">
+                        <i class="fas fa-trophy" aria-hidden="true"></i>
+                        <div class="stat-info">
+                            <span class="stat-number" id="longest-streak" aria-describedby="longest-streak-label">0</span>
+                            <span class="stat-label" id="longest-streak-label">Mejor Racha</span>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- Formulario para Nuevo Hábito -->
+                <section class="habit-form-section" aria-labelledby="add-habit-heading">
+                    <h2 id="add-habit-heading"><i class="fas fa-plus" aria-hidden="true"></i> Agregar Nuevo Hábito</h2>
+                    <form class="habit-form" role="form" aria-labelledby="add-habit-heading">
+                        <label for="habit-name" class="visually-hidden">Nombre del hábito</label>
+                        <input type="text" id="habit-name" placeholder="Nombre del hábito" 
+                               aria-describedby="habit-name-help" required>
+                        <small id="habit-name-help" class="help-text">Ingresa un nombre descriptivo para tu hábito</small>
+                        
+                        <label for="habit-description" class="visually-hidden">Descripción del hábito</label>
+                        <input type="text" id="habit-description" placeholder="Descripción (opcional)" 
+                               aria-describedby="habit-desc-help">
+                        <small id="habit-desc-help" class="help-text">Agrega detalles adicionales sobre tu hábito</small>
+                        
+                        <label for="habit-category" class="visually-hidden">Categoría del hábito</label>
+                        <select id="habit-category" aria-describedby="habit-cat-help">
+                            <option value="Salud">Salud</option>
+                            <option value="Ejercicio">Ejercicio</option>
+                            <option value="Productividad">Productividad</option>
+                            <option value="Aprendizaje">Aprendizaje</option>
+                            <option value="Bienestar">Bienestar</option>
+                            <option value="General">General</option>
+                        </select>
+                        <small id="habit-cat-help" class="help-text">Selecciona la categoría que mejor describe tu hábito</small>
+                        
+                        <button type="submit" id="add-habit-btn" class="btn-primary" aria-describedby="add-btn-help">
+                            <i class="fas fa-plus" aria-hidden="true"></i> Agregar
+                        </button>
+                        <small id="add-btn-help" class="help-text">Crear el nuevo hábito en tu lista</small>
+                    </form>
+                </section>
+
+                <!-- Lista de Hábitos -->
+                <section class="habits-section" aria-labelledby="habits-heading">
+                    <h2 id="habits-heading"><i class="fas fa-list-check" aria-hidden="true"></i> Mis Hábitos</h2>
+                    <div id="habits-container" class="habits-grid" role="list" aria-label="Lista de hábitos del usuario">
+                        <!-- Los hábitos se cargarán dinámicamente -->
+                    </div>
+                </section>
+
+                <!-- Panel de Análisis -->
+                <section class="analytics-section" aria-labelledby="analytics-heading">
+                    <h2 id="analytics-heading"><i class="fas fa-chart-bar" aria-hidden="true"></i> Análisis y Progreso</h2>
+                    <div class="analytics-grid">
+                        <article class="analytics-card" aria-labelledby="weekly-progress-heading">
+                            <h3 id="weekly-progress-heading">Progreso Semanal</h3>
+                            <div id="weekly-chart" class="chart-container" role="img" aria-label="Gráfico de progreso semanal de hábitos">
+                                <!-- Gráfico semanal -->
+                            </div>
+                        </article>
+                        <article class="analytics-card" aria-labelledby="top-habits-heading">
+                            <h3 id="top-habits-heading">Hábitos Más Consistentes</h3>
+                            <div id="top-habits" class="top-habits-list" role="list" aria-label="Lista de hábitos más consistentes">
+                                <!-- Lista de mejores hábitos -->
+                            </div>
+                        </article>
+                        <article class="analytics-card" aria-labelledby="category-stats-heading">
+                            <h3 id="category-stats-heading">Por Categoría</h3>
+                            <div id="category-stats" class="category-stats" role="list" aria-label="Estadísticas de hábitos por categoría">
+                                <!-- Estadísticas por categoría -->
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
+        </section>
+    </div>
+
+    <!-- Modal para mostrar ID de usuario -->
+    <div id="user-id-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description" aria-hidden="true">
+        <div class="modal-content" role="document">
+            <header>
+                <h3 id="modal-title">¡Cuenta creada exitosamente!</h3>
+            </header>
+            <main>
+                <p id="modal-description">Tu ID de usuario es:</p>
+                <div class="user-id-display">
+                    <span id="new-user-id" aria-label="ID de usuario generado"></span>
+                    <button id="copy-id-btn" class="btn-icon" aria-label="Copiar ID al portapapeles" title="Copiar ID">
+                        <i class="fas fa-copy" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <p class="warning" role="alert">
+                    <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
+                    Guarda este ID en un lugar seguro. Lo necesitarás para acceder a tu cuenta.
+                </p>
+            </main>
+            <footer>
+                <button id="close-modal-btn" class="btn-primary" aria-label="Cerrar modal y continuar">Entendido</button>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="app-footer" role="contentinfo">
+        <p>&copy; 2024 Habit Tracker. Aplicación web para seguimiento de hábitos.</p>
+        <nav aria-label="Enlaces del pie de página">
+            <a href="https://github.com/MarioMbf/habit-tracker-web" target="_blank" rel="noopener noreferrer" aria-label="Ver código fuente en GitHub">
+                <i class="fab fa-github" aria-hidden="true"></i> Código Fuente
+            </a>
+        </nav>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

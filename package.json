@@ -1,0 +1,21 @@
+{
+  "name": "habito-tracker",
+  "version": "1.0.0",
+  "description": "Aplicación web para seguimiento de hábitos con análisis de datos",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "uuid": "^9.0.0",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": ["habits", "tracker", "analytics"],
+  "author": "",
+  "license": "MIT"
+}

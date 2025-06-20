@@ -1,0 +1,29 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://github.com/MarioMbf/habit-tracker-web/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Allow all search engines to index the main content
+Allow: /index.html
+Allow: /styles.css
+Allow: /app.js
+
+# Disallow sensitive or unnecessary files
+Disallow: /data.json
+Disallow: /*.log
+Disallow: /node_modules/
+Disallow: /src/
+
+# Allow social media crawlers
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
